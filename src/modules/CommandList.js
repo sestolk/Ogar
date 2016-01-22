@@ -235,6 +235,16 @@ Commands.list = {
             }
         }
         console.log("[Console] Kicked all bots");
+	},
+    kickrange: function(gameServer,split) {
+        var start = parseInt(split[0]);
+        var end = parseInt(split[0]);
+        if (isNaN(start) || isNaN(end)) {
+            console.log("[Console] Please specify a valid range!");
+        }
+        for (var i = start; i < end; i++) {
+            this.kick(gameServer, i);
+        }
     },
     kill: function(gameServer,split) {
         var id = parseInt(split[1]);
@@ -258,7 +268,17 @@ Commands.list = {
             }
         }
     },
-    killall: function(gameServer, split) {
+    killrange: function(gameServer,split) {
+        var start = parseInt(split[0]);
+        var end = parseInt(split[0]);
+        if (isNaN(start) || isNaN(end)) {
+            console.log("[Console] Please specify a valid range!");
+        }
+        for (var i = start; i < end; i++) {
+            this.kill(gameServer, i);
+        }
+    },
+    killall: function(gameServer,split) {
         var count = 0;
         var len = gameServer.nodesPlayer.length;
         for (var i = 0; i < len; i++) {

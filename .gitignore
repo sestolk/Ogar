@@ -32,3 +32,4 @@ node_modules
 src/.settings/.jsdtscope
 src/.settings/org.eclipse.wst.jsdt.ui.superType.container
 src/.settings/org.eclipse.wst.jsdt.ui.superType.name
+.idea
